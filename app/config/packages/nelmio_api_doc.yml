@@ -1,0 +1,9 @@
+nelmio_api_doc:
+    areas:
+            path_patterns: # an array of regexps
+                - ^/api(?!/doc$)
+    documentation:
+        info:
+            title: LunchBot API
+            version: 1.0.0
+            description: The LunchBot Api documentation

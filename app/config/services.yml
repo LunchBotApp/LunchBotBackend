@@ -1,0 +1,11 @@
+services:
+    app.usercreator:
+        class: AppBundle\Services\UserCreator
+        arguments: ["@doctrine.orm.entity_manager"]
+    app.menu_builder:
+        class: AppBundle\Menu\MenuBuilder
+        arguments: ["@knp_menu.factory", "@service_container"]
+        tags:
+            - { name: knp_menu.menu_builder, method: mainMenu, alias: main } # The alias is what is used to retrieve the menu
+            - { name: knp_menu.menu_builder, method: languageMenu, alias: language } # The alias is what is used to retrieve the menu
+            - { name: knp_menu.menu_builder, method: loginMenu, alias: login } # The alias is what is used to retrieve the menu

@@ -1,0 +1,30 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+    <h4><span class="oi oi-lightbulb"></span> {{ 'Quick actions'|trans }}</h4>
+    <div class="row">
+        <div class="col">
+            <a href="{{ path('crawler_report_list') }}" class="btn btn-light btn-lg btn-block" style="padding: 15px"><h4><span class="fas fa-cloud-download-alt"></span><br>{{ 'Crawler Errors'|trans }}</h4></a>
+        </div>
+        <div class="col">
+            <a href="{{ path('meal_list_uncategorized') }}" class="btn btn-light btn-lg btn-block" style="padding: 15px"><h4><span class="fas fa-boxes"></span><br>{{ 'Food Categories'|trans }}</h4></a>
+        </div>
+        <div class="col">
+            <a href="{{ path('issue_report_list') }}" class="btn btn-light btn-lg btn-block" style="padding: 15px"><h4><span class="fas fa-exclamation-triangle"></span><br>{{ 'Issues'|trans }}</h4></a>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <a href="{{ path('meal_list') }}" class="btn btn-light btn-lg btn-block" style="padding: 15px"><h4><span class="fas fa-utensils"></span><br>{{ 'Meals'|trans }}</h4></a>
+        </div>
+        <div class="col">
+            <a href="{{ path('restaurant_list') }}" class="btn btn-light btn-lg btn-block" style="padding: 15px"><h4><span class="fas fa-building"></span><br>{{ 'Restaurants'|trans }}</h4></a>
+        </div>
+        <div class="col">
+            <a href="{{ path('restaurant_add') }}" class="btn btn-light btn-lg btn-block" style="padding: 15px"><h4><span class="fas fa-plus-circle"></span><br>{{ 'Restaurant'|trans }}</h4></a>
+        </div>
+    </div>
+    <br><br>
+{% endblock %}
+

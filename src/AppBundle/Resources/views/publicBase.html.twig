@@ -1,0 +1,29 @@
+{{ include('@App/baseInclude.html.twig') }}
+<body>
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light rounded" style="background-color: #f9a01b;">
+        <a class="navbar-brand" href="#">LunchBot</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="nav">
+            <ul class="navbar-nav ml-auto">
+                {{ knp_menu_render('language', {'currentClass': 'active', 'template': 'AppBundle:menu:knp_menu.html.twig'}) }}
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('fos_user_security_logout') }}">{{ 'Logout'|trans }} <span class="oi oi-account-logout"></span></a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+</div>
+<br>
+<main role="main" class="container">
+    {% block body %}
+
+    {% endblock %}
+</main><!-- /.container -->
+</body>
+</html>

@@ -1,0 +1,71 @@
+Login: Login
+Logout: Logout
+slack.welcome: Welcome to the LunchBot!
+slack.dialog.greeting: As this is your first time using LunchBot, we would like to ask you to fill out this questionnaire, to improve our suggestions.
+slack.dialog.button: Questionnaire
+slack.lunch.suggestions: Here are your suggestions
+slack.lunch.suggestions.help: |
+  Syntax: /lunch @Username1;@Username2;...;Setting1=Value1;Setting2=Value2;...
+  With the "/lunch" command, you can request suggestions for today's lunch specials. These suggestions will be based on your previous ratings and your settings.
+  If you don't want to go eat alone, you can optionally add other users from your workspace to your group by refering to them with @Username.
+  Furthermore you can uniquely change your settings. This can be done with "Setting=Value". The settings you can change are the following:
+      price=x-y: determines the range for the price of the suggestions. x and y can be integers or positive decimal numbers with one or two digits to the left of the decimal point.
+      location=Street Nr, ZIP City, Country: determines the location that is used for the distance calculation.
+      distance=z: determines the maximum distance (in meters), between the restaurants and the specified location. z needs to be an integer.
+  Multiple optional parameters are separated by a semicolon (;).
+  Example of a valid request: /lunch @Philipp;@Marc;price=5-10,25
+slack.lunch.random: Here are you random suggestions
+slack.lunch.random.help: |
+  Syntax: /random
+  With this command, you will receive completely random suggestions.
+slack.lunch.all: Here is a list with all toady's meals
+slack.lunch.all.help: |
+  Syntax: /all-meals
+  With this command, you will receive a list with all today's meals
+slack.lunch.rating: Thank you very much for taking the time to rate your meal.
+slack.lunch.rating.title: Please rate
+slack.lunch.rating.end: with 1-5 stars.
+slack.lunch.rating.thankyou: Thank you very much for taking the time to rate your meal.
+slack.lunch.notfound: We could not find a matching meal.
+slack.settings.save: Your settings were saved.
+slack.settings.save.help: |
+  Syntax: /save-settings
+  Es öffnet sich ein Dialogfenster, in dem Sie Ihre Einstellungen anpassen können
+  A pop-up window will appear where you can change your settings.
+slack.settings.show: |
+  Your current settings are:
+slack.settings.show.button.title: Your settings
+slack.settings.show.button.text: Clicking this button will allow you to change your settings
+slack.settings.show.dialog.title: settings
+slack.settings.show.pricerange: price range:
+slack.settings.show.location.country: country:
+slack.settings.show.location: place:
+slack.settings.show.distance: distance:
+slack.settings.show.language: language:
+slack.feedback: Thank you very much for the feedback.
+slack.feedback.help: |
+  Syntax: /feedback ...
+  With this command, you can tell us what you think about the LunchBot.
+slack.issue: Thank you very much for telling us about this bug. One of our admins will look into it as soon as possible.
+slack.issue.help: |
+  Syntax: /issue ...
+  With this command, you can report a bug.
+slack.suggestion: Thank you very much for your suggestion.
+slack.suggestion.help: |
+  Syntax: /suggest-restaurant ...
+  With this command, you can suggest a restaurant that you want to be added to the LunchBot.
+slack.error: The command that you used doesn't exist. To get a list with all valid commands, write /help in the chat.
+slack.wrong-commands: One of the parameters that you entered is invalid. If you need help, write /help in the chat.
+slack.select: select
+slack.website: website
+slack.call: call
+slack.email: send email
+slack.route: calculate route
+slack.settings.locales: Language settings
+slack.settings.locales.title: Please select your language. You can change it afterwards by using the "/set-language" command.
+slack.settings.language: Language settings
+slack.settings.language.title: Please select your language. You can change it afterwards by using the "/set-language" command.
+slack.settings.language.error: An error occured while saving your language. Please verify the syntax, or report an issue.
+slack.settings.pricerange: Price range settings
+slack.settings.pricerange.title: Please select a price range which matches your needs. You can change it afterwards by using the "/set-pricerange" command.
+slack.settings.pricerange.error: An error occured while saving your price range. Please verify the syntax, or report an issue.

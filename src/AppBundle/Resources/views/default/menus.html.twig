@@ -1,0 +1,31 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+    <h2>Guten Tag bei LunchBot!</h2>
+    <h4><span class="fas fa-utensils"></span> Alle Gerichte ({{ today|date('d.m.Y') }})</h4>
+    <table class="table table-striped">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col" width="30%">Restaurant</th>
+            <th scope="col" width="30%">Name</th>
+            <th scope="col" width="20%">Preis</th>
+            <th scope="col" width="20%">Kategorie</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        {% for meal in meals %}
+            <tr>
+                <th scope="col"><p style="font-weight: normal !important;">{{ meal.restaurant }}</p></th>
+                <th scope="col">{{ meal.name }} <p style="font-weight: normal !important;">{{ meal.addition }}</p></th>
+                <th scope="col">{{ meal.price }} €</th>
+                <th scope="col">{% for category in meal.categories %}
+                        <span class="badge badge-secondary">{{ category }}</span>
+                    {% endfor %}</th>
+            </tr>
+        {% else %}
+            <div class="alert alert-info">Es sind keine Gerichte in der Datenbank vorhanden.</div>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

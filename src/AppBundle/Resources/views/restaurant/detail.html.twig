@@ -1,0 +1,25 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+    <h2><span class="fas fa-building"></span> {{ restaurant.name }}</h2>
+    <br>
+    <table class="table table-striped">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        {% for meal in meals %}
+            <tr>
+                <th scope="col">{{ meal.place }}</th>
+                <th scope="col">{{ meal.name }} <p style="font-weight: normal !important;">{{ meal.addition }}</p></th>
+                <th scope="col">{{ meal.price }} €</th>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

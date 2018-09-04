@@ -1,0 +1,45 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+
+{% block body %}
+    <h2><span class="fas fa-utensils"></span> {{ 'Uncategorized Meals'|trans }}</h2>
+    <div class="row">
+        <div class="col-3">
+            <a href="{{ path('meal_add') }}" class="btn btn-light btn-lg btn-block" style="padding: 15px"><h4><span class="fas fa-plus-circle"></span><br>{{ 'Meal'|trans }}</h4></a>
+        </div>
+    </div>
+    <br>
+    <table class="table table-striped">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col" width="10%">Date</th>
+            <th scope="col" width="10%">Restaurant</th>
+            <th scope="col" width="20%">Name</th>
+            <th scope="col" width="10%">Price</th>
+            <th scope="col" width="20%">Category</th>
+            <th scope="col" width="20%">Rating</th>
+            <th scope="col" width="10%"></th>
+        </tr>
+        </thead>
+        <tbody>
+
+        {% for meal in meals %}
+            <tr>
+                <th scope="col">{{ meal.date|date('d.m.Y') }}</th>
+                <th scope="col"><p style="font-weight: normal !important;">{{ meal.restaurant }}</p></th>
+                <th scope="col">{{ meal.name }} <p style="font-weight: normal !important;">{{ meal.addition }}</p></th>
+                <th scope="col">{{ meal.price }} €</th>
+                <th scope="col">{% for category in meal.categories %}
+                        <span class="badge badge-secondary">{{ category }}</span>
+                    {% endfor %}</th>
+                <th scope="col">
+                    <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star-half-alt"></i>
+                </th>
+                <th scope="col">
+                    <a href="{{ path('meal_edit', {'id': meal.id}) }}" class="btn btn-light"><span class="oi oi-pencil"></span></a>
+                </th>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

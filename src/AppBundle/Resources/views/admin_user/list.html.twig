@@ -1,0 +1,43 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+
+{% block body %}
+    <h2><span class="fas fa-users"></span> {{ 'Admin Users'|trans }}</h2>
+    <div class="row">
+        <div class="col-3">
+            <a href="{{ path('admin_user_add') }}" class="btn btn-light btn-lg btn-block" style="padding: 15px"><h4><span class="fas fa-plus-circle"></span><br>{{ 'Admin User'|trans }}</h4></a>
+        </div>
+    </div>
+    <br>
+    <table class="table table-striped">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Username</th>
+            <th scope="col">Email</th>
+            <th scope="col">Role</th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+
+        {% for user in users %}
+            <tr>
+                <th scope="col">{{ user.name }}</th>
+                <th scope="col">{{ user.username }}</th>
+                <th scope="col">{{ user.email }}</th>
+                <th scope="col">
+                    {% for role in user.roles %}
+                        <span class="badge badge-secondary">{{ role }}</span>
+                    {% endfor %}
+                </th>
+                <th scope="col">
+                    <a href="{{ path('admin_user_edit', {'id': user.id}) }}" class="btn btn-light"><span class="oi oi-pencil"></span></a>
+                </th>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+

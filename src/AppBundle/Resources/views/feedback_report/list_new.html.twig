@@ -1,0 +1,37 @@
+{% extends 'AppBundle::base.html.twig' %}
+{% block body %}
+    <h2><span class="fas fa-building"></span> {{ 'Requested Restaurants'|trans }}</h2>
+    <div class="row">
+        <div class="col-3">
+            <a href="{{ path('restaurant_add') }}" class="btn btn-light btn-lg btn-block" style="padding: 15px"><h4><span class="fas fa-plus-circle"></span><br>{{ 'Restaurant'|trans }}</h4></a>
+        </div>
+    </div>
+    <br>
+    <table class="table table-striped">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col" width="10%">User</th>
+            <th scope="col" width="20%">Date</th>
+            <th scope="col" width="60%">Message</th>
+            <th scope="col" width="10%"></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for report in reports %}
+            <tr>
+                <th scope="col">{{ report.user }}</th>
+                <th scope="col">{{ report.date|date('d.m.Y H:i:s') }}</th>
+                <th scope="col">{{ report.message }}</th>
+                <th scope="col">{% if report.finished %}
+                        <h4><span class="badge badge-pill badge-success"><span class="oi oi-check"></span></span></h4>
+                    {% else %}
+                        <a href="#" class="btn btn-danger material-sent" id="{{ report.id }}"><span class="oi oi-x"></span></a>
+                        <div id="creationResult{{ report.id }}"></div>
+                    {% endif %}</th>
+                </th>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+

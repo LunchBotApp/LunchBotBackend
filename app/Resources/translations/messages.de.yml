@@ -1,0 +1,70 @@
+Login: Login
+Logout: Logout
+slack.welcome: Herzlich Willkommen beim LunchBot!
+slack.dialog.greeting: Sie verwenden unseren Bot zum Ersten Mal, daher bitten wir Sie einen kurzen Fragebogen auszufüllen, dass wir unsere Empfehlung auf Sie zuschneiden können.
+slack.dialog.button: Fragebogen
+slack.lunch.suggestions: Hier sind Ihre Vorschläge
+slack.lunch.suggestions.help: |
+  Syntax: /lunch @Username1;@Username2;...;Setting1=Value1;Setting2=Value2;...
+  Mithilfe des Befehls "/lunch" können Sie Vorschläge für die heutigen Mittagsgerichte, basierend auf Ihren bisherigen Bewertungen und Einstellungen, anfragen.
+  Falls sie nicht alleine essen gehen wollen, können sie optional mit "@Username" noch andere User aus Ihrem Workspace zur Gruppe hinzufügen.
+  Des Weiteren können Sie auch noch einmalig die Einstellungen ändern. Dies tun sie mit "Setting=Value". Mögliche Einstellungen, die sie ändern können sind folgende:
+      price=x-y: legt das Intervall fest in dem sich der Preis der Vorschläge befinden soll. x und y können ganze Zahlen oder positive Kommazahlen mit bis zu zwei Nachkommstellen sein.
+      location=Straße Nr, PLZ Stadt, Land: legt den Standort fest, der für die Distanzrechnung verwendet wird.
+      distance=z: legt die maximale Entfernung (in Meter) fest, die zwischen den Restaurants und dem angegebenen Standort liegen soll. z muss eine ganze Zahl sein.
+  Mehrere optionale Parameter werden durch ein Semikolon (;) getrennt.
+  Beispiel einer gültigen Anfrage: /lunch @Philipp;@Marc;price=5-10,25
+slack.lunch.random: Hier sind Ihre zufälligen Vorschläge
+slack.lunch.random.help: |
+  Syntax: /random
+  Mit diesem Befehl erhalten Sie komplett zufällige Vorschläge.
+slack.lunch.all: Hier ist eine Liste mit allen heutigen Mittagsgerichten 
+slack.lunch.all.help: |
+  Syntax: /all-meals
+  Mit diesem Befehl erhalten Sie eine Liste aller heutigen Mittagsgerichte.
+slack.lunch.rating: Vielen Dank, dass Sie sich die Zeit genommen haben ein Gericht auszuwählen.
+slack.lunch.rating.title: Bitte bewerten Sie das gewählte Gericht
+slack.lunch.rating.end: mit 1-5 Sternen.
+slack.lunch.rating.thankyou: Vielen Dank für Ihre Bewertung.
+slack.lunch.notfound: Wir konnten leider kein passendes Gericht finden.
+slack.settings.save: Ihre Einstellungen wurden gespeichert.
+slack.settings.save.help: |
+  Syntax: /save-settings
+  Es öffnet sich ein Dialogfenster, in dem Sie Ihre Einstellungen anpassen können
+slack.settings.show: |
+  Ihre momentanen Einstellungen sind:
+slack.settings.show.button.title: Ihre Einstellungen
+slack.settings.show.button.text: Mit Klick auf diesen Button können Sie Ihre Einstellungen ändern
+slack.settings.show.dialog.title: Einstellungen
+slack.settings.show.pricerange: Preisbereich:
+slack.settings.show.location.country: Land:
+slack.settings.show.location: Ort:
+slack.settings.show.distance: Entfernung:
+slack.settings.show.language: Sprache:
+slack.feedback: Vielen Dank für das Feedback.
+slack.feedback.help: |
+  Syntax: /feedback ...
+  Mit diesem Befehl können Sie uns mitteilen was Sie über LunchBot denken.
+slack.issue: Vielen Dank für das Melden des Fehlers. Einer unserer Admins wird sich so schnell wie möglich um das Problem kümmern.
+slack.issue.help: |
+  Syntax: /issue ...
+  Mit diesem Befehl können Sie uns einen Fehler melden.
+slack.suggestion: Vielen Dank für Ihren Vorschlag.
+slack.suggestion.help: |
+  Syntax: /suggest-restaurant ...
+  Mit diesem Befehl können Sie uns ein Restaurant vorschlagen, dass wir zum LunchBot hinzufügen sollen.
+slack.error: Der von Ihnen benutzte Befehl existiert leider nicht. Benutzen sie /help, um eine Liste aller verfügbaren Befehle zu bekommen.
+slack.wrong-commands: Einer der eingegebenen Parameter scheint falsch zu sein. Falls sie weitere Hilfe zu den Behfelen brauchen, dann benutzen Sie /help.
+slack.select: Auswählen
+slack.website: Internetseite
+slack.call: Anrufen
+slack.email: Email senden
+slack.route: Weg berechnen
+slack.settings.locales: Spracheinstellungen
+slack.settings.locales.title: Wählen Sie bitte Ihre Sprache aus. Sie können dies jederzeit mit /set-language ändern
+slack.settings.language: Spracheinstellungen
+slack.settings.language.title: Wählen Sie bitte Ihre Sprache aus. Sie können dies jederzeit mit /set-language ändern
+slack.settings.language.error: Beim Speichern ist leider ein Fehler aufgetreten. Kontrollieren Sie bitte die Syntax oder wenden sich an den Administrator
+slack.settings.pricerange: Preisbereicheinstellungen
+slack.settings.pricerange.title: Wählen Sie bitte den Preisbereich, der am Besten auf Sie zutrifft. Sie können dies jederzeit mit /set-pricerange ändern
+slack.settings.pricerange.error: Beim Speichern ist leider ein Fehler aufgetreten. Kontrollieren Sie bitte die Syntax oder wenden sich an den Administrator

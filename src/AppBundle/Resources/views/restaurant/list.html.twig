@@ -1,0 +1,42 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+    <h2><span class="fas fa-building"></span> {{ 'Restaurants'|trans }}</h2>
+    <div class="row">
+        <div class="col-3">
+            <a href="{{ path('restaurant_add') }}" class="btn btn-light btn-lg btn-block" style="padding: 15px"><h4><span class="fas fa-plus-circle"></span><br>{{ 'Restaurant'|trans }}</h4></a>
+        </div>
+    </div>
+    <br>
+    <table class="table table-striped">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Addition</th>
+            <th scope="col">Place</th>
+            <th scope="col">Meals</th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+
+        {% for restaurant in restaurants %}
+            <tr>
+                <th scope="col">{{ restaurant.name }}</th>
+                <th scope="col">{{ restaurant.address.address|nl2br }}</th>
+                <th scope="col">{{ restaurant.email }}<br>{{ restaurant.phone }}</th>
+                <th scope="col"><h4><span class="badge badge-pill badge-dark">{{ restaurant.meals|length }}</span></h4></th>
+                <th scope="col">
+                    {% if restaurant.extraction %}
+                        <a href="{{ path('extraction_edit', {'id': restaurant.extraction.id}) }}" class="btn btn-primary">Extraction</a>
+                    {% else %}
+                        <a href="{{ path('extraction_add', {'rid': restaurant.id}) }}" class="btn btn-success"> Extraction</a>
+                    {% endif %}
+                    <a href="{{ path('restaurant_edit', {'id': restaurant.id}) }}" class="btn btn-light"><span class="oi oi-pencil"></span></a>
+                    <a href="{{ path('restaurant_detail', {'id': restaurant.id}) }}" class="btn btn-dark"><span class="oi oi-chevron-right"></span></a>
+                </th>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

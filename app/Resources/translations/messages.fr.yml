@@ -1,0 +1,60 @@
+Login: Login
+Logout: Logout
+slack.welcome: Bienvenue chez LunchBot!
+slack.dialog.greeting: Comme vous utilisez le bot pour la première fois, nous vous invitons à remplir le questionnaire suivant afin de personnaliser les réponses de ce dernier.
+slack.dialog.button: Questionnaire
+slack.lunch.suggestions: Veuillez trouver ci-dessous vos propositions.
+slack.lunch.suggestions.help: |
+  Syntaxe: /lunch @Username1;@Username2;...;Setting1=Value1;Setting2=Value2;...
+slack.lunch.random: Veuillez trouvez vos suggestions aléatoires
+slack.lunch.random.help: |
+  Syntaxe: /random
+  Avec cette commande vous recevez des suggestions aléatoires.
+slack.lunch.all: Veuillez trouver une liste de tous les menus du jour.
+slack.lunch.all.help: |
+  Syntaxe: /all-meals
+  Avec cette commande vous recevez tous les menus du jour.
+slack.lunch.rating: Merci de prendre le temps d'evaluer le menu.
+slack.lunch.rating.title: Veuillez évaluer
+slack.lunch.rating.end: de 1 à 5 étoiles.
+slack.lunch.rating.thankyou: Merci pour votre évaluation.
+slack.settings.save: Vos paramètres ont été sauvegardés.
+slack.settings.save.help: |
+  Syntaxe: /save-settings
+slack.settings.show: |
+  Vos paramètres actuelles:
+slack.settings.show.button.title: Vos paramètres
+slack.settings.show.button.text: Vous pouvez modifier vos paramètres en appuyant sur le bouton ci-dessous.
+slack.settings.show.dialog.title: Paramètres
+slack.settings.show.pricerange: Prix:
+slack.settings.show.location.country: Pays:
+slack.settings.show.location: Localité:
+slack.settings.show.distance: Distance:
+slack.settings.show.language: Langue:
+slack.feedback: Merci beaucoup pour votre commentaire.
+slack.feedback.help: |
+  Syntaxe: /feedback ...
+  Avec cette commande vous pouvez soumettre un commentaire.
+slack.issue: Merci beaucoup pour votre commentaire.
+slack.issue.help: |
+  Syntaxe: /issue ...
+  Avec cette commande vous pouvez signaler un problème.
+slack.suggestion: Merci beaucoup pour votre suggestion.
+slack.suggestion.help: |
+  Syntaxe: /suggest-restaurant ...
+  Avec cette commande vous pouvez suggérer un nouveau restaurant.
+slack.error: Un paramètre semble être incorrect. Veuillez utiliser /help en cas de problèmes.
+slack.wrong-commands: Un paramètre semble être incorrect. Veuillez utiliser /help en cas de problèmes.
+slack.select: Sélectionner
+slack.website: Site web
+slack.call: Appeler
+slack.email: Envoyer un email
+slack.route: Calculer la route
+slack.settings.locales: Paramètres de langue
+slack.settings.locales.title: Veuillez choisir votre langue. Vous pouvez changer celle-ci plus tard en utilisant la commande "/set-language".
+slack.settings.language: Paramètres de langue
+slack.settings.language.title: Veuillez choisir votre langue. Vous pouvez changer celle-ci plus tard en utilisant la commande "/set-language".
+slack.settings.language.error: Une erreur est survenue. Veuillez vérifier la syntaxe ou signalez une erreur.
+slack.settings.pricerange: Paramètres de prix
+slack.settings.pricerange.title: Veuillez choisir votre prix préféré. Vous pouvez changer celle-ci plus tard en utilisant la commande "/set-pricerange".
+slack.settings.pricerange.error: Une erreur est survenue. Veuillez vérifier la syntaxe ou signalez une erreur.

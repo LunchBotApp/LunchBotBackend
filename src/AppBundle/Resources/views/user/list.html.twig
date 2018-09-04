@@ -1,0 +1,21 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+    <h2><span class="fas fa-user-secret"></span> {{ 'Slack Users'|trans }}</h2>
+    <br>
+    <table class="table table-striped">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">UserID</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        {% for user in users %}
+            <tr>
+                <th scope="col">{{ user }}</th>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

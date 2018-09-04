@@ -1,0 +1,27 @@
+{{ include('@App/baseInclude.html.twig') }}
+<body>
+<nav class="navbar navbar-expand-md {% block navbar_class %}navbar-dark {% endblock %} fixed-top" style="background-color: #00697f;">
+    <a class="navbar-brand" href="{{ path('home') }}">LunchBot</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav mr-auto">
+
+            {% block program_switch %}
+            {% endblock %}
+        </ul>
+
+        {{ knp_menu_render('main', {'currentClass': 'active', 'template': 'AppBundle:menu:knp_menu.html.twig'}) }}
+        {{ knp_menu_render('login', {'currentClass': 'active', 'template': 'AppBundle:menu:knp_menu.html.twig'}) }}
+    </div>
+</nav>
+
+<main role="main" class="container">
+    {% block body %}
+
+    {% endblock %}
+</main><!-- /.container -->
+</body>
+</html>

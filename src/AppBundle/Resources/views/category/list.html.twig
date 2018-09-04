@@ -1,0 +1,40 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+    <h2><span class="fas fa-boxes"></span> {{ 'Categories'|trans }}</h2>
+    <div class="row">
+        <div class="col-3">
+            <a href="{{ path('category_add') }}" class="btn btn-light btn-lg btn-block" style="padding: 15px"><h4><span class="fas fa-plus-circle"></span><br>{{ 'Category'|trans }}</h4></a>
+        </div>
+    </div>
+    <br>
+    <table class="table table-striped">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col" width="30%">Name</th>
+            <th scope="col" width="10%">Meals</th>
+            <th scope="col" width="50%">Keywords</th>
+            <th scope="col" width="10%"></th>
+        </tr>
+        </thead>
+        <tbody>
+
+        {% for category in categories %}
+            <tr>
+                <th scope="col">{{ category.name }}</th>
+                <th scope="col"><h4><span class="badge badge-pill badge-dark">{{ category.meals|length }}</span></h4></th>
+                <th scope="col">{% for searchTerm in category.searchTerms %}
+                        <span class="badge badge-secondary">{{ searchTerm }}</span>
+                    {% endfor %}</th>
+                <th scope="col">
+                    <a href="{{ path('category_edit', {'id': category.id}) }}" class="btn btn-light"><span class="oi oi-pencil"></span></a>
+                </th>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+
+
+

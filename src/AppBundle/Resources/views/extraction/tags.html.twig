@@ -1,0 +1,51 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+    <h2><span class="fas fa-tags"></span> {{ 'Tags'|trans }}</h2>
+    <br>
+    <h3>{{ extraction.restaurant.name }}</h3>
+    <div class="row">
+        <div class="col-3">
+            <a href="{{ path('tag_add', {'eid': extraction.id}) }}" class="btn btn-light btn-lg btn-block" style="padding: 15px"><h4><span class="fas fa-plus-circle"></span><br>{{ 'Tags'|trans }}</h4></a>
+        </div>
+    </div>
+    <br>
+    <table class="table table-striped">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col" width="10%">Value</th>
+            <th scope="col" width="10%">
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if extraction.tag %}
+            <tr>
+                <th scope="col">{{ extraction.tag.value }}</th>
+                <th scope="col" width="10%">
+                    <a href="{{ path('tag_add_parent', {'eid': extraction.id, 'parent': extraction.tag.id}) }}" class="btn btn-dark"> Add child</a>
+                    <a href="{{ path('tag_edit', {'id': extraction.tag.id}) }}" class="btn btn-light"><span class="oi oi-pencil"></span></a>
+                </th>
+            </tr>
+        {% endif %}
+        {% for tag in extraction.tag.children %}
+            <tr>
+                <th scope="col"> >>>> {{ tag.value }}</th>
+                <th scope="col" width="10%">
+                    <a href="{{ path('tag_add_parent', {'eid': extraction.id, 'parent': tag.id}) }}" class="btn btn-dark"> Add child</a>
+                    <a href="{{ path('tag_edit', {'id': tag.id}) }}" class="btn btn-light"><span class="oi oi-pencil"></span></a>
+                </th>
+            </tr>
+            {% for tagTwo in tag.children %}
+                <tr>
+                    <th scope="col"> >>>>>>>> {{ tagTwo.value }}</th>
+                    <th scope="col" width="10%">
+                        <a href="{{ path('tag_add_parent', {'eid': extraction.id, 'parent': tagTwo.id}) }}" class="btn btn-dark"> Add child</a>
+                        <a href="{{ path('tag_edit', {'id': tagTwo.id}) }}" class="btn btn-light"><span class="oi oi-pencil"></span></a>
+                    </th>
+                </tr>
+            {% endfor %}
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

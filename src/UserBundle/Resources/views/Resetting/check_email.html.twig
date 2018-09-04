@@ -1,0 +1,13 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% extends "@User/base.html.twig" %}
+{% block title %}
+    Check Email
+{% endblock title %}
+{% block body %}
+    <p>
+        {{ 'resetting.check_email'|trans({'%tokenLifetime%': tokenLifetime})|nl2br }}
+    </p>
+{% endblock body %}
+{% block links %}
+{% endblock links %}

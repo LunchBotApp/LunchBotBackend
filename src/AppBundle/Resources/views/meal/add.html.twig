@@ -1,0 +1,12 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+    <h2><span class="fas fa-plus-circle"></span> {{ 'Meal'|trans }}</h2>
+    <div style="position: relative">
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
+
+

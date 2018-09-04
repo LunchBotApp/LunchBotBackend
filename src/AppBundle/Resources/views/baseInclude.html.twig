@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <meta name="keywords"
+          content="">
+    {% block description %}
+        <meta name="description"
+              content="LunchBot">
+    {% endblock %}
+
+    {% block graph %}
+        <meta property="og:url" content="https://www.lunchbot.de/"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="LunchBot"/>
+        <meta property="og:description"
+              content="LunchBot"/>
+    {% endblock %}
+
+    {% block assets %}
+        {% javascripts
+            '@AppBundle/Resources/public/js/libs/jquery-3.2.1.min.js'
+            '@AppBundle/Resources/public/js/libs/popper.min.js'
+            '@AppBundle/Resources/public/js/libs/select2.min.js'
+            '@AppBundle/Resources/public/js/libs/moment.min.js'
+            '@AppBundle/Resources/public/js/libs/bootstrap-datetimepicker.min.js' %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+        <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+        <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('fonts/css/open-iconic-bootstrap.css') }}" rel="stylesheet">
+        <link href="{{ asset('fonts/css/fontawesome-all.css') }}" rel="stylesheet">
+        {% stylesheets
+            '@AppBundle/Resources/public/css/dashboard.css'
+            '@AppBundle/Resources/public/css/select2.min.css'
+            '@AppBundle/Resources/public/css/bootstrap-datetimepicker.min.css' %}
+    <link type="text/css" href="{{ asset_url }}" rel="stylesheet">
+        {% endstylesheets %}
+    {% endblock %}
+    <style type="text/css">
+        body {
+            padding-top: 5rem;
+        }
+    </style>
+    {% javascripts
+        '@AppBundle/Resources/public/js/main.js' %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    <title>{% block title %}LunchBot{% endblock %}</title>
+</head>
