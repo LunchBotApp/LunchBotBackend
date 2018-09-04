@@ -60,3 +60,7 @@ All routes:
 #### Create a new account
 * Run `bin/console fos:user:create` and enter a username, email and password.
 * Run `bin/console fos:user:promote [created username] ROLE_ADMIN` to promote your user and enable access to `\admin` page.
+
+### License
+
+Check out the [LICENSE](LICENSE) file.
