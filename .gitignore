@@ -4,6 +4,9 @@
 /phpunit.xml
 /var/*
 !/var/cache
+!/var/data
+!var/data/.gitkeep
+/var/data/*git rm --cached
 /var/cache/*
 !var/cache/.gitkeep
 !/var/logs
