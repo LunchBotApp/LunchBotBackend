@@ -51,7 +51,7 @@ class LoadData implements FixtureInterface, ContainerAwareInterface
         $manager->persist($user);
         $manager->flush();
 
-        $restaurants       = ["Oxford Café", "Mensa Am Adenauerring", "Mensa Moltke", "Mensa Erzberger", "Mensa Gottesaue", "Mensa Tiefenbronner", "Mensa Holzgarten", "Gasthaus Marktlücke", "Restaurant Sokrates", "Alte Bank", "Bratar", "Fabrik"];
+        $restaurants       = ["Oxford Café", "Gasthaus Marktlücke", "Restaurant Sokrates", "Alte Bank", "Fabrik"];
         $restaurantDetails = [
 
             "Oxford Café"            => [
