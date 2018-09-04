@@ -1,9 +1,9 @@
 <p align="center">
-    <img src="lunchbot.png" alt="" width="100">
+    <img src="lunchbot.png" alt="" width="125">
   <h3 align="center">LunchBot Backend</h3>
 </p>
 
-LunchBot Backend is a Symfony based project, which crawls websites from various websites/images/pdfs and provides a suggestion based API. All meals from the locations which are set up in this Backend can also be seen using the API.
+LunchBot Backend is a Symfony based project, which provides suggestions of meals for lunch. It crawls websites from various websites/images/pdfs and provides a suggestion based API. All meals from the locations which are set up in this Backend can also be seen using the API.
 
 This project has been developed initially developed as "Praxis der Softwareentwicklung" at the [KIT](http://ps.ipd.kit.edu).
 

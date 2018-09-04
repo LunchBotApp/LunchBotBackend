@@ -1,0 +1,16 @@
+language: php
+php:
+- nightly
+env:
+- SYMFONY_VERSION="3.4.*" DB=mysql
+services:
+- mysql
+before_install:
+- mysql -e 'CREATE DATABASE symfony;'
+before_script:
+- cp app/config/parameters.yml.dist app/config/parameters.yml
+- composer install
+- php bin/console doctrine:schema:create
+- php bin/console initialize:database
+- php bin/console fos:user:create test test@example.com test
+- php bin/console fos:user:promote test ROLE_ADMIN
