@@ -3,12 +3,7 @@ language: php
 php:
 - 7.2
 
-env:
-- SYMFONY_VERSION=3.4.*
-
 before_script:
-- composer require symfony/symfony:${SYMFONY_VERSION}
-- vendor/symfony-cmf/testing/bin/travis/phpcr_odm_doctrine_dbal.sh
 - php composer install
 - php bin/console doctrine:schema:create
 - php bin/console initialize:database
@@ -16,7 +11,3 @@ before_script:
 - php bin/console fos:user:promote test ROLE_ADMIN
 
 script: phpunit --coverage-text
-
-matrix:
-  allow_failures:
-  - env: SYMFONY_VERSION=dev-master
