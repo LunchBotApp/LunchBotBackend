@@ -35,11 +35,6 @@ matrix:
   - env: STABILITY="dev"
 before_install:
 - cp app/config/parameters.yml.dist app/config/parameters.yml
-- composer install
-- php bin/console doctrine:schema:create
-- php bin/console initialize:database
-- php bin/console fos:user:create test test@example.com test
-- php bin/console fos:user:promote test ROLE_ADMIN
 - if [[ $COVERAGE != true ]]; then phpenv config-rm xdebug.ini || true; fi
 - if ! [ -z "$STABILITY" ]; then composer config minimum-stability ${STABILITY}; fi;
 - if ! [ -v "$DEPENDENCIES" ]; then composer require --no-update ${DEPENDENCIES}; fi;
@@ -48,6 +43,10 @@ install:
 - if [[ "$COMPOSER_FLAGS" == *"--prefer-lowest"* ]]; then composer update --prefer-dist --no-interaction --prefer-stable --quiet; fi
 - composer update ${COMPOSER_FLAGS} --prefer-dist --no-interaction
 - ./vendor/bin/simple-phpunit install
+- php bin/console doctrine:schema:create
+- php bin/console initialize:database
+- php bin/console fos:user:create test test@example.com test
+- php bin/console fos:user:promote test ROLE_ADMIN
 script:
 - composer validate --strict --no-check-lock
 # simple-phpunit is the PHPUnit wrapper provided by the PHPUnit Bridge component and
