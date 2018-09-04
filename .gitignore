@@ -24,3 +24,4 @@ nbproject/*
 /nohup.out
 /.vagrant/
 /downloads/
+/var/data/test.sqlite
