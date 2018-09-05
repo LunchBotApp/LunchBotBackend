@@ -199,7 +199,7 @@ class LoadData implements FixtureInterface, ContainerAwareInterface
                 "key"      => "?",
                 "type"     => Extraction::TYPE_DOWNLOAD,
                 "fileType" => ".jpg",
-                "keyTerms" => ['\n', '10.5', '2;3;5;7;9'],
+                "keyTerms" => ['\n', '10.5', '2;4;5;7;9'],
                 "url"      => "https://www.fabrik.lu/wp-content/uploads/mdls/Fabrik---mdls.jpg",
                 "website"  => "https://www.fabrik.lu",
                 "phone"    => "0035227403333",

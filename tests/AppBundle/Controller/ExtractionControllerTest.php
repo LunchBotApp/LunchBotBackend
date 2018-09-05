@@ -69,33 +69,32 @@ class ExtractionControllerTest extends WebTestCase
         $client->submit($form);
 
         $this->assertSame($response->getStatusCode(), 200);
-        $this->assertSame(0, $crawler->filter('html:contains("Extraction")')->count());
+        $this->assertGreaterThan(0, $crawler->filter('html:contains("Extraction")')->count());
     }
 
 
     public function testEdit()
     {
-        $client = $this->getClient('/extractions/2/edit');
+        $client = $this->getClient('/extractions/1/edit');
 
         $response = $client->getResponse();
         $crawler  = $client->getCrawler();
 
-        $this->assertSame($response->getStatusCode(), 500);
+        $this->assertSame($response->getStatusCode(), 200);
         $this->assertGreaterThan(0, $crawler->filter('html:contains("Extraction")')->count());
-        $this->assertGreaterThan(0, $crawler->filter('html:contains("Mensa Am Adenauerring")')->count());
+        $this->assertGreaterThan(0, $crawler->filter('html:contains("Oxford Café")')->count());
     }
 
     public function testTags()
     {
-        $client = $this->getClient('/extractions/2/tags');
+        $client = $this->getClient('/extractions/1/tags');
 
         $response = $client->getResponse();
         $crawler  = $client->getCrawler();
 
         $this->assertSame($response->getStatusCode(), 200);
         $this->assertGreaterThan(0, $crawler->filter('html:contains("Tags")')->count());
-        $this->assertGreaterThan(0, $crawler->filter('html:contains("Mensa Am Adenauerring")')->count());
-        $this->assertGreaterThan(0, $crawler->filter('html:contains("adenauerring")')->count());
+        $this->assertGreaterThan(0, $crawler->filter('html:contains("Oxford Café")')->count());
     }
 
     /**
