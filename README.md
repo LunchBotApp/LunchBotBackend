@@ -5,7 +5,7 @@
 
 LunchBot Backend is a Symfony based project, which provides suggestions of meals for lunch. It crawls websites from various websites/images/pdfs and provides a suggestion based API. All meals from the locations which are set up in this Backend can also be seen using the API.
 
-This project has been developed initially developed as "Praxis der Softwareentwicklung" at the [KIT](http://ps.ipd.kit.edu).
+This project has been initially developed as "Praxis der Softwareentwicklung" project at the [KIT](http://ps.ipd.kit.edu).
 
 [![Build Status](https://travis-ci.org/LunchBotApp/LunchBotBackend.svg?branch=master)](https://travis-ci.org/LunchBotApp/LunchBotBackend)
 
