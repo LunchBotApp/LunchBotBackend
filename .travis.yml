@@ -16,5 +16,9 @@ before_script:
 - php bin/console fos:user:create test test@example.com test
 - php bin/console fos:user:promote test ROLE_ADMIN
 - php bin/console download:all
+- sudo apt-get -qq update
+- sudo apt-get install -y tesseract-ocr
+- sudo apt-get install -y tesseract-ocr-fra
+- sudo apt-get install -y tesseract-ocr-deu
 
 script: phpunit --coverage-text
