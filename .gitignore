@@ -23,5 +23,7 @@ nbproject/*
 /ubuntu-xenial-16.04-cloudimg-console.log
 /nohup.out
 /.vagrant/
-/downloads/
+!/downloads/
+/downloads/*
+!/downloads/.gitkeep
 /var/data/test.sqlite
