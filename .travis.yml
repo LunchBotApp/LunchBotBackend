@@ -20,5 +20,3 @@ before_script:
 - sudo apt-get install -y tesseract-ocr
 - sudo apt-get install -y tesseract-ocr-fra
 - sudo apt-get install -y tesseract-ocr-deu
-
-script: phpunit --coverage-text
